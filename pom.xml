@@ -16,10 +16,8 @@
 
 	<properties>
 		<!-- General properties -->
-		<war.name>${server.servlet.context-path}</war.name>
-		<propertiesFile>src/main/resources/application.properties</propertiesFile>
-		<spring.doc>2.0.2</spring.doc>
-		<spring.boot.admin.starter.client>3.2.0</spring.boot.admin.starter.client>
+		<spring.doc.version>2.0.2</spring.doc.version>
+		<spring.boot.admin.starter.client.version>3.2.0</spring.boot.admin.starter.client.version>
 	</properties>
 
 	<dependencies>
@@ -32,7 +30,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!-- <scope>provided</scope>  -->
 		</dependency>
 		
 		<dependency>
@@ -43,42 +40,18 @@
 		<dependency>
 		   <groupId>de.codecentric</groupId>
 		   <artifactId>spring-boot-admin-starter-client</artifactId>
-		   <version>${spring.boot.admin.starter.client}</version>
+		   <version>${spring.boot.admin.starter.client.version}</version>
 		</dependency>
 		
 		<dependency>
 	        <groupId>org.springdoc</groupId>
 	        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-	        <version>${spring.doc}</version>
+	        <version>${spring.doc.version}</version>
 	    </dependency>
 
 	</dependencies>
 
 	<build>
-		<finalName>${jar.name}</finalName>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>properties-maven-plugin</artifactId>
-					<version>1.0.0</version>
-					<executions>
-						<execution>
-							<id>propertiesFromFile</id>
-							<phase>initialize</phase>
-							<goals>
-								<goal>read-project-properties</goal>
-							</goals>
-							<configuration>
-								<files>
-									<file>${basedir}/${propertiesFile}</file>
-								</files>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -90,13 +63,6 @@
 						<phase>none</phase>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<skipTests>${test.skip}</skipTests>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
