@@ -16,7 +16,8 @@
 
 	<properties>
 		<!-- General properties -->
-		<spring.doc.version>2.0.2</spring.doc.version>
+		<spring.doc.version>2.5.0</spring.doc.version>
+		<swagger.doc.version>2.2.22</swagger.doc.version>
 		<spring.boot.admin.starter.client.version>3.2.0</spring.boot.admin.starter.client.version>
 	</properties>
 
@@ -48,6 +49,12 @@
 	        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 	        <version>${spring.doc.version}</version>
 	    </dependency>
+	    
+	    <dependency>
+		    <groupId>io.swagger.core.v3</groupId>
+		    <artifactId>swagger-core</artifactId>
+		    <version>${swagger.doc.version}</version>
+		</dependency>
 
 	</dependencies>
 
